@@ -848,7 +848,6 @@ footer {
   a {
     font-weight: 400;
     font-size: 16px;
-    line-height: 60px;
     color: #33b7bc;
     transition: transform 0.3s ease;
 
@@ -866,6 +865,7 @@ footer {
 
   ul {
     display: flex;
+    align-items: center;
     gap: 35px;
 
     li {
