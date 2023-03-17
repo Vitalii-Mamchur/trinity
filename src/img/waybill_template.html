@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css">
+    .container {
+      font-family: sans-serif;
+      width: 21cm;
+      height: 29.7cm;
+      position: relative;
+          margin: 0 auto;
+    }
+
+    .logo {
+      margin-bottom: -2mm;
+      width: 38mm;
+      margin-left: 13mm;
+      margin-top: 1mm;
+    }
+
+    .bar-code-div {
+      border-radius: 5px;
+      border: 2px solid #b3afaf;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 2mm;
+    }
+
+    .rounded-div {
+      border-radius: 4mm;
+      border: 2px solid #b3afaf;
+      width: 88%;
+      margin: 0 auto;
+      padding: 2mm;
+      margin-bottom: 15px;
+    }
+
+    .headers {
+      display: flex;
+    }
+
+    .shipper-header {
+      padding-right: 10px;
+      border-bottom: 2px solid #b3afaf;
+      border-right: 2px solid #b3afaf;
+      width: 50%;
+      padding-left: 2mm;
+    }
+
+    .receiver-header {
+      border-bottom: 2px solid #b3afaf;
+      width: 50%;
+      padding-left: 2mm;
+    }
+
+    .shipper-data {
+      padding-right: 10px;
+      border-bottom: 2px solid #b3afaf;
+      border-right: 2px solid #b3afaf;
+      width: 50%;
+      padding-left: 2mm;
+    }
+
+    .receiver-data {
+      border-bottom: 2px solid #b3afaf;
+      width: 50%;
+      padding-left: 2mm;
+    }
+
+    .shipper-data-last {
+      padding-right: 10px;
+      border-right: 2px solid #b3afaf;
+      width: 50%;
+      padding-left: 2mm;
+      height: 9mm;
+    }
+
+    .receiver-data-last {
+      width: 50%;
+      padding-left: 2mm;
+
+    }
+
+    .data-container {
+      font-size: 4mm;
+      display: flex;
+    }
+
+    .shipment-header {
+      padding-right: 10px;
+      border-bottom: 2px solid #b3afaf;
+      width: 100%;
+      padding-left: 2mm;
+    }
+
+    .shipmet-data-title {
+      width: 20%;
+      padding-right: 10px;
+      border-bottom: 2px solid #b3afaf;
+      border-right: 2px solid #b3afaf;
+      padding-left: 2mm;
+    }
+
+
+    .shipmet-data-title-last {
+      width: 20%;
+      padding-right: 10px;
+      border-right: 2px solid #b3afaf;
+      padding-left: 2mm;
+
+    }
+
+
+    .shipmet-data {
+      width: 80%;
+      padding-right: 10px;
+      border-bottom: 2px solid #b3afaf;
+      padding-left: 2mm;
+    }
+
+    .shipmet-data-last {
+      width: 80%;
+      padding-right: 10px;
+      padding-left: 2mm;
+      height: 10mm;
+    }
+
+    .info-header {
+      width: 15%;
+      border-bottom: 2px solid #b3afaf;
+      border-right: 2px solid #b3afaf;
+      padding-left: 2mm;
+
+    }
+
+    .info-header-last {
+      width: 15%;
+      border-right: 2px solid #b3afaf;
+      padding-left: 2mm;
+    }
+
+    .info-title {
+      width: 25%;
+      border-right: 2px solid #b3afaf;
+      border-bottom: 2px solid #b3afaf;
+    }
+
+    .info-title-last {
+      width: 25%;
+      border-right: 2px solid #b3afaf;
+    }
+
+    .info-data {
+      width: 60%;
+      border-bottom: 2px solid #b3afaf;
+
+    }
+
+    .info-data-last {
+      width: 60%;
+
+    }
+
+    .info-cell {
+      border-bottom: 2px solid #b3afaf;
+      padding-bottom: 14px;
+      padding-left: 2mm;
+    }
+
+    .info-cell-last {
+      padding-left: 2mm;
+    }
+
+    .plate-number {
+      display: flex;
+    }
+
+    .plate-number-data {
+      border-right: 2px solid #b3afaf;
+      border-bottom: 2px solid #b3afaf;
+      width: 10%;
+      text-align: center;
+    }
+
+    .plate-number-data-last {
+      border-bottom: 2px solid #b3afaf;
+      width: 10%;
+      text-align: center;
+    }
+
+
+    .trip-title {
+      padding-left: 2mm;
+      width: 25%;
+      border-right: 2px solid #b3afaf;
+      border-bottom: 2px solid #b3afaf;
+    }
+
+    .trip-data {
+      padding-left: 2mm;
+      width: 25%;
+      border-right: 2px solid #b3afaf;
+      border-bottom: 2px solid #b3afaf;
+    }
+
+    .trip-data-corner {
+      padding-left: 2mm;
+      width: 25%;
+      border-bottom: 2px solid #b3afaf;
+    }
+
+    .trip-title-last {
+      padding-left: 2mm;
+      border-right: 2px solid #b3afaf;
+      width: 53.5%;
+    }
+
+    .trip-data-last {
+      padding-left: 2mm;
+      border-right: 2px solid #b3afaf;
+      width: 25%;
+    }
+
+    .trip-data-last-corner {
+      padding-left: 2mm;
+      width: 25%;
+    }
+
+    .driver-endorsement {
+      width: 88%;
+      font-size: 4mm;
+      margin: 0 auto;
+      padding: 8px;
+      margin-bottom: 5mm;
+    }
+
+
+    .madar-div {
+      border: 2px solid #b3afaf;
+      width: 90%;
+      margin: 0 auto;
+margin-bottom: -1px;
+    }
+
+    .madar-footer {
+      display: flex;
+      width: 100%;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .madar-data-title {
+      width: 32%;
+      padding-left: 1mm;
+      border-right: 2px solid #b3afaf;
+    }
+
+    .madar-data-1 {
+      width: 48%;
+      padding-left: 1mm;
+
+    }
+
+    .madar-data {
+      width: 20%;
+      padding-left: 1mm;
+    }
+  </style>
+</head>
+
+<body class="body" class="container">
+  <div >
+    <div>
+      <img src="https://admin.madar.app/assets/images/madar-logo.svg"
+        alt="madar logo" class="logo">
+    </div>
+    <hr style="border: 4px solid rgb(255, 99, 64); margin-bottom: 15px" />
+    <div class="bar-code-div">
+      <div style="margin: -4mm 9mm -4mm 6mm; display: flex; justify-content: space-between;">
+        <h4>E-Waybill Number : <span class="value">{{data.id}}</span></h4>
+        {{#if data.assigningDateTz}}
+        <h4>Assigning Date: <span class="value">
+          {{prettifyDate data.assigningDateTz}}
+        </span></h4>
+        {{/if}}
+        {{#if data.loadingDateTz}}
+          <h4>Loading Date: <span class="value">
+          {{prettifyDate data.loadingDateTz}}
+        </span></h4>
+        {{/if}}
+
+        <img src="{{data.requestNumberBarcode}}" width="200mm" height="25mm" style="margin-top: 4.5mm;">
+      </div>
+
+    </div>
+
+    <div class="rounded-div">
+      <div class="headers">
+        <div class="shipper-header">
+          <h4 style="margin: 0mm 0mm 1mm 0mm;">Shipper information</h4>
+        </div>
+        <div class="receiver-header">
+          <h4 style="margin: 0mm 0mm 1mm 0mm;">Receiver Information</h4>
+        </div>
+      </div>
+
+      <div class="data-container" style="margin: -4mm 0mm -4mm 0mm;">
+        <div class="shipper-data">
+          <p style="margin-bottom: 1mm;">Name: {{data.customer.title}}</p>
+        </div>
+        <div class="receiver-data">
+          <p style="margin-bottom: 1mm;"> Name:{{data.receiver.name}}</p>
+        </div>
+      </div>
+
+      <div class="data-container" style="margin: -4mm 0mm -4mm 0mm;">
+        <div class="shipper-data">
+          <p style="margin-bottom: 1mm;">Commercial Register: {{data.customer.crNumber}}</p>
+        </div>
+        <div class="receiver-data">
+          <p style="margin-bottom: 1mm;"> Commercial Register:  </p>
+{{!-- {{data.receiver.crNumber}} --}}
+        </div>
+      </div>
+
+      <div class="data-container" style="margin: -4mm 0mm -4mm 0mm;">
+        <div class="shipper-data">
+          <p style="margin-bottom: 1mm;">Address: {{data.pickUpLocation.address}}</p>
+        </div>
+        <div class="receiver-data">
+          <p style="margin-bottom: 1mm;"> Address: {{data.dropOffLocation.address}}</p>
+        </div>
+      </div>
+
+      <div class="data-container" style="margin: -4mm 0mm -4mm 0mm;">
+        <div class="shipper-data">
+          <p style="margin-bottom: 1mm;">Email: {{data.customer.email}}</p>
+        </div>
+        <div class="receiver-data">
+          <p style="margin-bottom: 1mm;"> Email: {{data.contactPerson.email}}</p>
+        </div>
+      </div>
+      <div class="data-container" style="margin: -4mm 0mm -4mm 0mm;">
+        <div class="shipper-data">
+          <p style="margin-bottom: 1mm;">Contact Person: {{data.customer.contactFirstName}} {{data.customer.contactLastName}}</p>
+        </div>
+        <div class="receiver-data">
+          <p style="margin-bottom: 1mm;"> Contact Person: {{data.contactPerson.name}}</p>
+        </div>
+      </div>
+      <div class="data-container" style="margin: -4mm 0mm -1mm 0mm;">
+        <div class="shipper-data">
+          <p style="margin-bottom: 1mm;">Mobile: {{data.customer.contactMobileNumber}}</p>
+        </div>
+        <div class="receiver-data">
+          <p style="margin-bottom: 1mm;"> Mobile: {{data.contactPerson.mobileNumber}}</p>
+        </div>
+      </div>
+      <div class="data-container" style="margin: -4mm 0mm -1mm 0mm;">
+        <div class="shipper-data-last">
+          <p style="margin-bottom: 1mm;">Location: {{data.pickUpLocation.title}}</p>
+        </div>
+        <div class="receiver-data-last">
+          <p style="margin-bottom: 1mm;"> Location: {{data.dropOffLocation.title}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-div" style="height: 24mm;">
+      <div style=" height: 8mm;display: flex;">
+        <div class="shipment-header">
+          <h4 style="margin: 0mm 0mm 1mm 0mm;">Shipment information</h4>
+        </div>
+
+      </div>
+
+      <div class="data-container" style="height: 6mm;">
+        <div class="shipmet-data-title">
+          <h4 style="margin: 0mm 0mm 1mm 0mm;">Product Type: </h4>
+        </div>
+        <div class="shipmet-data">
+          <p style="margin-bottom: 0mm; margin-top: 0mm;">{{data.productType.name}}</p>
+        </div>
+      </div>
+
+      <div class="data-container" style="height: 6mm;">
+        <div class="shipmet-data-title">
+          <h4 style="margin: 0mm 0mm 5mm 0mm;">Required truck: </h4>
+        </div>
+        <div class="shipmet-data">
+          <p style="margin-bottom: 0mm; margin-top: 0mm;">{{data.truckType.name}}</p>
+        </div>
+      </div>
+
+
+      <div class="data-container" style="height: 6mm;">
+        <div class="shipmet-data-title-last">
+          <h4 style="margin: 0mm 0mm 1mm 0mm;">Description: </h4>
+        </div>
+        <div class="shipmet-data-last">
+          <p style="margin-bottom: 0mm; margin-top: 0mm;">{{data.notes}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="rounded-div">
+      <div class="headers">
+        <div class="shipment-header">
+          <h4 style="margin: 0mm 0mm 1mm 0mm;">Transporter information</h4>
+        </div>
+
+      </div>
+
+      <div class="data-container">
+        <div class="info-header">
+          <h4 style="margin-top: 6mm;">
+            TRUCK INFO
+          </h4>
+        </div>
+        <div class="info-title">
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; height: 1mm;" class="info-cell">PLATE NUMBER: </p>
+
+          </div>
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; height: 1mm;" class="info-cell">TRUCK TYPE: </p>
+
+          </div>
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; height: 1mm;" class="info-cell-last">Truck Serial Number </p>
+          </div>
+
+        </div>
+
+        <div class="info-data">
+          <!-- in case of plate-number one cell  -->
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; ; height: 1mm;" class="info-cell">
+              {{data.truck.plateNumber}}
+            </p>
+          </div>
+
+          <!-- in case of plate-number boxes  -->
+          <!-- <div class="plate-number">
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              1
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              2
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              3
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              4
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              M
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              D
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              R
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              1
+            </p>
+            <p class="plate-number-data" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              2
+            </p>
+            <p class="plate-number-data-last" style="margin-bottom: 0mm; margin-top: 0mm; ; height: 4.7mm;"
+              class="info-cell">
+              3
+            </p>
+          </div> -->
+
+
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; ; height: 1mm;" class="info-cell">
+              {{data.truck.type.name}}
+            </p>
+          </div>
+
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; ; height: 1mm;" class="info-cell-last">
+              {{data.truck.sequenceNumber}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="data-container">
+        <div class="info-header-last">
+          <h4 style="margin-top: 8mm;">
+            DRIVER INFO
+
+          </h4>
+        </div>
+        <div class="info-title-last">
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; height: 1mm;" class="info-cell">Driver NAME: </p>
+
+          </div>
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; height: 1mm;" class="info-cell">IQAMA/NATIONAL ID:</p>
+
+          </div>
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; height: 1mm;" class="info-cell">NATIONALITY </p>
+
+          </div>
+
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm;" class="info-cell-last">MOBILE NUMBER </p>
+
+          </div>
+
+        </div>
+
+        <div class="info-data-last">
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; ; height: 1mm;" class="info-cell">
+              {{data.driver.user.firstName}} {{data.driver.user.lastName}}
+            </p>
+          </div>
+
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; ; height: 1mm;" class="info-cell">
+              {{data.driver.iqamaId}}
+            </p>
+          </div>
+
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; ; height: 1mm;" class="info-cell">
+              {{data.driver.nationality}}
+            </p>
+          </div>
+
+          <div>
+            <p style="margin-bottom: 0mm; margin-top: 0mm; ; height: 1mm;" class="info-cell-last">
+              {{data.driver.user.mobileNumber}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="rounded-div">
+      <div class="headers">
+        <div class="shipment-header">
+          <h4 style="margin: 0mm 0mm 1mm 0mm;">Trip information</h4>
+        </div>
+
+      </div>
+
+      <div class="data-container">
+        <div class="trip-title" style="height: 8mm;">
+          <h4 style="margin: 2mm 0mm 1mm 0mm;">
+            From
+          </h4>
+        </div>
+
+        <div class="trip-data" style="height: 8mm;">
+          <p style="margin-bottom: 0mm; margin-top: 2mm;">
+            {{data.pickUpLocation.city.name}}
+          </p>
+        </div>
+
+        <div class="trip-title">
+          <h4 style="margin: 2mm 0mm 1mm 0mm;">
+            Loading date
+          </h4>
+        </div>
+        <div class="trip-data-corner">
+          <p style="margin-bottom: 0mm; margin-top: 2mm;">
+
+           {{#data.history}}
+          {{#isEqualList action 'GOODS_LOADED' createdAt}}
+          {{prettifyDate this}} 
+          {{/isEqualList}}
+          {{/data.history}} 
+          </p>
+
+        </div>
+      </div>
+
+
+      <div class="data-container">
+        <div class="trip-title" style="height: 8mm;">
+          <h4 style="margin: 2mm 0mm 1mm 0mm;">
+            To
+          </h4>
+        </div>
+
+
+        <div class="trip-data" style="height: 8mm;">
+          <p style="margin-bottom: 0mm; margin-top: 2mm;">
+            {{data.dropOffLocation.city.name}}
+          </p>
+        </div>
+
+        <div class="trip-title">
+          <h4 style="margin: 2mm 0mm 1mm 0mm;">
+            Offloading date
+          </h4>
+        </div>
+        <div class="trip-data-corner">
+          <p style="margin-bottom: 0mm; margin-top: 2mm;">
+            {{#data.history}}
+            {{#isEqualList action 'GOODS_DELIVERED' createdAt}}
+            {{prettifyDate this}}
+            {{/isEqualList}}
+            {{/data.history}} 
+          </p>
+        </div>
+      </div>
+
+      {{!-- <div class="data-container">
+
+        <div class="trip-title-last" style="margin-bottom: 0mm;">
+          <h4 style="margin: 2mm 0mm 1mm 0mm;">
+            More Than one Location in same city
+          </h4>
+        </div>
+
+        <div class="trip-data-last">
+          <p style="margin-bottom: 0mm; margin-top: 2mm;">
+            Yes
+          </p>
+        </div>
+
+        <div class="trip-data-last-corner">
+          <p style="margin-bottom: 0mm; margin-top: 2mm;">
+            1
+          </p>
+        </div>
+
+      </div> --}}
+    </div>
+
+
+
+
+    <div>
+      <p class="driver-endorsement">
+        I, {{data.driver.user.firstName}} {{data.driver.user.lastName}}, the driver of the car whose numbers are
+        mentioned above, undertake and commit myself to
+        be personally responsible for the goods loaded upon receiving them, intact and complete in number and quality,
+        in order to deliver them to their destination without delay, and that I bear the consequences of the goods in
+        terms of fines and expenses for damage, shortage or delay resulting from my negligence as I commit to setting
+        sail And store the goods and notify the Foundation's office in the event of any emergency during the same day.
+      </p>
+    </div>
+
+    <hr style="border: 4px solid rgb(232, 62, 62); margin-bottom: 15px" />
+
+
+
+    <div class="madar-div" style="font-weight:bold;">
+
+
+      <div class="data-container">
+
+        <div class="madar-footer">
+          <div class="madar-data-title">
+            <h3 style=" margin-bottom: -1mm;"><a style="color: #2F5CBD;" href="https://www.madar.app/">www.madar.app</a>
+            </h3>
+
+            <p style="font-size:12px;">Email: CustomerService@madar.app
+            </p>
+          </div>
+          <div class="madar-data-1" style="margin-top: 36px;">
+            <p style="font-size:12px;"> Madar Digital Logistics Solution Co.
+            </p>
+          </div>
+          <div class="madar-data" style="margin-top: 36px;">
+            <p style="font-size:12px;">VAT: 310573362100003 </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-container" >
+        <div class="madar-footer">
+          <div class="madar-data-title">
+            <p style="font-size:12px;">Tel: 920002341 - 5555
+
+            </p>
+          </div>
+          <div class="madar-data-1">
+            <p style="font-size:12px;">Kingdom of Saudi Arabia, P.O. Box 1087, Riyadh 11431
+            </p>
+          </div>
+          <div class="madar-data">
+            <p style="font-size:12px;">CR : 1010586820
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+ 
+</body>
+
+</html>
